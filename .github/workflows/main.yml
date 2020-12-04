@@ -39,6 +39,13 @@ jobs:
         id: hello
         with:
           who-to-greet: 'Mona the Octocat'
+      - name: Commit report
+        run: |
+          git config --global user.name 'Anthony Dury'
+          git config --global user.email ''
+          git commit -am "Automated report"
+          git push
+      
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
