@@ -43,7 +43,8 @@ jobs:
         run: |
           git config --global user.name 'Anthony Dury'
           git config --global user.email 'mail'
-          git commit -am "Automated report"
+          git add downloadedfile.json
+          git commit -m "Automated report"        
           git push
       
       # Use the output from the `hello` step
