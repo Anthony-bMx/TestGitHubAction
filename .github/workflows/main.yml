@@ -43,7 +43,7 @@ jobs:
         run: |
           git config --global user.name 'Anthony Dury'
           git config --global user.email 'mail'
-          git add -A .
+          git add -A backups
           git commit -m "Automated commit"        
           git push
       
