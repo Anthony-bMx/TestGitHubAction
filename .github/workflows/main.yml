@@ -42,7 +42,7 @@ jobs:
       - name: Commit report
         run: |
           git config --global user.name 'Anthony Dury'
-          git config --global user.email ''
+          git config --global user.email 'mail'
           git commit -am "Automated report"
           git push
       
