@@ -15,6 +15,22 @@ date=$(date +"%Y-%m-%dT%H-%M-%SZ")
 filename="Notify-Backup-${date}.json"
 
 # Interogate API to get configuration file
-wget https://jsonplaceholder.typicode.com/todos/1 -O $filename
+wgetoutput=$(wget -S "https://jsonplaceholder.typicode.com/todos/1" -O filename.json 2>&1)
 
-echo "::set-output name=time::$time"
+# Extract status code (Double quotes are important to preserve internal spacing)
+statuscode=$(echo "$wgetoutput" | grep "HTTP/" | awk '{print $2}')
+
+# If failed (Non 200 status code)
+if [ ! "$statuscode" = "200" ]
+then
+  echo "::set-output name=success::'Download failed'"
+  echo "Export failed"
+  # Print command output
+  echo "$wgetoutput"
+  # Exit with error
+  exit 1
+fi
+
+echo "::set-output name=success::'Download succeed'"
+
+
