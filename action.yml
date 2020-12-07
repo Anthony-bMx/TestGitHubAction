@@ -1,9 +1,9 @@
 # action.yml
-name: 'Hello World'
+name: 'Download backup file'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  subaccount:  # id of input
+    description: 'Subaccount Name'
     required: true
     default: 'World'
 outputs:
