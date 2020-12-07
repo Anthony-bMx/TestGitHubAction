@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "Hello $1"
+echo "subaccount: $1"
 time=$(date)
 
 # Prepare destination directory
