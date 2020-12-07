@@ -3,13 +3,18 @@
 echo "Hello $1"
 time=$(date)
 
+# Prepare destination directory
 mkdir -p backups
 cd backups
 
-# Example:  NotifyExport-2020-12-04T16-47-47Z.json
+
+# Get formated date
 date=$(date +"%Y-%m-%dT%H-%M-%SZ")
-filename="NotifyExport-${date}.json"
+
+# Prepare filename (Example:  "Notify-Backup-2020-12-07T14-19-16Z.json")
+filename="Notify-Backup-${date}.json"
+
+# Interogate API to get configuration file
 wget https://jsonplaceholder.typicode.com/todos/1 -O $filename
 
-#wget https://jsonplaceholder.typicode.com/todos/1 -O downloadedfile.json 
 echo "::set-output name=time::$time"
