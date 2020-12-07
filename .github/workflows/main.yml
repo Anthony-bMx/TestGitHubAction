@@ -34,7 +34,7 @@ jobs:
       #  run: |
       #    echo Add other actions to build,
       #    echo test, and deploy your project.
-      - name: Hello world action step
+      - name: Download backup file action step
         uses: ./ # Uses an action in the root directory
         id: hello
         with:
