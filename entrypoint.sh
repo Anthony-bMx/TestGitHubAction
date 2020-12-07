@@ -15,7 +15,7 @@ date=$(date +"%Y-%m-%dT%H-%M-%SZ")
 filename="Notify-Backup-${date}.json"
 
 # Interogate API to get configuration file
-wgetoutput=$(wget -S "https://jsonplaceholder.typicode.com/todos/1" -O filename.json 2>&1)
+wgetoutput=$(wget -S "https://jsonplaceholder.typicode.com/todos/1" -O $filename 2>&1)
 
 # Extract status code (Double quotes are important to preserve internal spacing)
 statuscode=$(echo "$wgetoutput" | grep "HTTP/" | awk '{print $2}')
