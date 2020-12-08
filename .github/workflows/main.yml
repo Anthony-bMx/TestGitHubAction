@@ -30,8 +30,8 @@ jobs:
         uses: ./ # Uses an action in the root directory
         id: exportStep
         env:
-          USERNAME: ${{ secrets.BPMRULESREPOSITORYRULES_PASSWORD }}
-          PASSWORD: ${{ secrets.BPMRULESREPOSITORYRULES_USERNAME }}
+          BPMRULESREPOSITORYRULES_USERNAME: ${{ secrets.BPMRULESREPOSITORYRULES_USERNAME }}
+          BPMRULESREPOSITORYRULES_PASSWORD: ${{ secrets.BPMRULESREPOSITORYRULES_PASSWORD }}          
         with:
           subaccount: 'dev'
           projectId: 'devProject'
