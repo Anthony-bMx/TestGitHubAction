@@ -1,11 +1,11 @@
 # action.yml
 name: 'Download backup file'
-description: 'Greet someone and record the time'
+description: 'Download the configuration of a BusinessRules project as a .JSON file'
 inputs:
   subaccount:  # id of input
     description: 'Subaccount Name'
     required: true
-    default: 'World'
+    default: 'daljamsas'
 outputs:
   success: # id of output
     description: 'The time we greeted you'
@@ -14,3 +14,5 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.subaccount }}
+    - ${{ inputs.username }}
+    - ${{ inputs.password }}
