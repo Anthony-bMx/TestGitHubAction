@@ -25,5 +25,5 @@ runs:
   args:
     - ${{ inputs.subaccount }}
     - ${{ inputs.projectId }}
-    - ${{ inputs.username }}
-    - ${{ inputs.password }}
+  runs.env:
+    - USERNAME: "this is a username set in action.yml"
