@@ -26,4 +26,4 @@ runs:
     - ${{ inputs.subaccount }}
     - ${{ inputs.projectId }}
   env:
-    - USERNAME: "this is a username set in action.yml"
+  USERNAME: "this is a username set in action.yml"
