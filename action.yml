@@ -10,6 +10,12 @@ inputs:
     description: 'Id of the BusinessRules project'
     required: true
     default: 'idExample'
+  username:
+    description: 'Username to authenticate against BusinessRules API'
+    required: true
+  password:
+    description: 'Password to authenticate against BusinessRules API'
+    required: true
 outputs:
   success: # id of output
     description: 'Download succeed or Download failed'
@@ -19,3 +25,6 @@ runs:
   args:
     - ${{ inputs.subaccount }}
     - ${{ inputs.projectId }}
+  env:
+    API_USERNAME: ${{ inputs.username }}
+    API_PASSWORD: ${{ inputs.password }}
