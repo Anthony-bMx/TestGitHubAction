@@ -2,10 +2,14 @@
 name: 'Download backup file'
 description: 'Download the configuration of a BusinessRules project as a .JSON file'
 inputs:
-  subaccount:  # id of input
+  subaccount:
     description: 'Subaccount Name'
     required: true
-    default: 'daljamsas'
+    default: 'subaccountExample'
+  projectId:
+    description: 'Id of the BusinessRules project'
+    required: true
+    default: 'idExample'
   username:
     description: 'Username to authenticate against BusinessRules API'
     required: true
