@@ -14,7 +14,7 @@ inputs:
     required: true
 outputs:
   success: # id of output
-    description: 'The time we greeted you'
+    description: 'Download succeed or Download failed'
 runs:
   using: 'docker'
   image: 'Dockerfile'
