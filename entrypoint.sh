@@ -1,8 +1,9 @@
 #!/bin/sh
 
 echo "subaccount: $1"
-echo "username: $2"
-echo "password: $3"
+echo "projectId: $2"
+echo "username: $3"
+echo "password: $4"
 time=$(date)
 
 # Prepare destination directory
