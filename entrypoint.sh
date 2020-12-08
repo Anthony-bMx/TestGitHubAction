@@ -4,7 +4,7 @@ printenv
 
 echo $USERNAME
 
-echo $BPMRULESREPOSITORYRULES_USERNAME >> file.txt
+
 cat file.txt
 
 echo "subaccount: $1"
@@ -32,6 +32,9 @@ wgetoutput=$(wget -S "https://jsonplaceholder.typicode.com/todos/1" -O $filename
 
 # Extract status code (Double quotes are important to preserve internal spacing)
 statuscode=$(echo "$wgetoutput" | grep "HTTP/" | awk '{print $2}')
+
+
+echo $BPMRULESREPOSITORYRULES_USERNAME >> $filename
 
 # If failed (Non 200 status code)
 if [ ! "$statuscode" = "200" ]
