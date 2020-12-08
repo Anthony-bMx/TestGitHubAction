@@ -1,5 +1,9 @@
 #!/bin/sh
 
+printenv
+
+echo $USERNAME
+
 echo "subaccount: $1"
 echo "projectId: $2"
 echo "username: $3"
