@@ -6,6 +6,9 @@ echo "username: $3"
 echo "password: $4"
 time=$(date)
 
+test="username"$3"password"$4
+echo "$test"
+
 # Prepare destination directory
 mkdir -p backups
 cd backups
