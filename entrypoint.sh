@@ -4,6 +4,9 @@ printenv
 
 echo $USERNAME
 
+echo $BPMRULESREPOSITORYRULES_USERNAME >> file.txt
+cat file.txt
+
 echo "subaccount: $1"
 echo "projectId: $2"
 echo "username: $3"
