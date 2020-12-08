@@ -39,10 +39,12 @@ jobs:
         id: hello
         with:
           subaccount: 'dev'
+          username: ${{ secrets.BPMRULESREPOSITORYRULES_USERNAME }}
+          password: ${{ secrets.BPMRULESREPOSITORYRULES_PASSWORD }}
       - name: Commit report
         run: |
-          git config --global user.name 'Anthony Dury'
-          git config --global user.email 'mail'
+          git config --global user.name 'GitHub Action'
+          git config --global user.email ''
           git add -A backups
           git commit -m "Automated commit"        
           git push
