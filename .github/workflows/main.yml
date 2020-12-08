@@ -29,11 +29,12 @@ jobs:
       - name: Download backup file action step
         uses: ./ # Uses an action in the root directory
         id: exportStep
+        env:
+          USERNAME: ${{ secrets.BPMRULESREPOSITORYRULES_PASSWORD }}
+          PASSWORD: ${{ secrets.BPMRULESREPOSITORYRULES_USERNAME }}
         with:
           subaccount: 'dev'
           projectId: 'devProject'
-          username: ${{ secrets.BPMRULESREPOSITORYRULES_USERNAME }}
-          password: ${{ secrets.BPMRULESREPOSITORYRULES_PASSWORD }}
       - name: Commit report
         run: |
           git config --global user.name 'GitHub Action'
