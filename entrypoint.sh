@@ -1,25 +1,15 @@
 #!/bin/sh
 
-printenv
-
-echo $USERNAME
-
-
-cat file.txt
+# For debug: printenv
+#echo $API_USERNAME
+#echo $API_PASSWORD
 
 echo "subaccount: $1"
 echo "projectId: $2"
-echo "username: $3"
-echo "password: $4"
-time=$(date)
-
-test="username"$3"password"$4
-echo "$test"
 
 # Prepare destination directory
 mkdir -p backups
 cd backups
-
 
 # Get formated date
 date=$(date +"%Y-%m-%dT%H-%M-%SZ")
@@ -33,10 +23,6 @@ wgetoutput=$(wget -S "https://jsonplaceholder.typicode.com/todos/1" -O $filename
 # Extract status code (Double quotes are important to preserve internal spacing)
 statuscode=$(echo "$wgetoutput" | grep "HTTP/" | awk '{print $2}')
 
-
-echo $API_USERNAME >> $filename
-echo $API_PASSWORD >> $filename
-
 # If failed (Non 200 status code)
 if [ ! "$statuscode" = "200" ]
 then
@@ -49,5 +35,3 @@ then
 fi
 
 echo "::set-output name=success::'Download succeed'"
-
-
