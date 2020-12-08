@@ -24,5 +24,6 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.subaccount }}
+    - ${{ inputs.projectId }}
     - ${{ inputs.username }}
     - ${{ inputs.password }}
