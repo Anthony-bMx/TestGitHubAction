@@ -25,20 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      #- name: Run a one-line script
-      #  run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      #- name: Run a multi-line script
-      #  run: |
-      #    echo Add other actions to build,
-      #    echo test, and deploy your project.
+      # Interrogate API and download .JSON file
       - name: Download backup file action step
         uses: ./ # Uses an action in the root directory
-        id: hello
+        id: exportStep
         with:
           subaccount: 'dev'
+          projectId: 'devProject'
           username: ${{ secrets.BPMRULESREPOSITORYRULES_USERNAME }}
           password: ${{ secrets.BPMRULESREPOSITORYRULES_PASSWORD }}
       - name: Commit report
@@ -49,6 +42,6 @@ jobs:
           git commit -m "Automated commit"        
           git push
       
-      # Use the output from the `hello` step
+      # Use the output from the `exportStep` step
       - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+        run: echo "The time was ${{ steps.exportStep.outputs.time }}"
