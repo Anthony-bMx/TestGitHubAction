@@ -6,10 +6,10 @@ inputs:
     description: 'Subaccount Name'
     required: true
     default: 'daljamsas'
-   username:
+  username:
     description: 'Username to authenticate against BusinessRules API'
     required: true
-   password:
+  password:
     description: 'Password to authenticate against BusinessRules API'
     required: true
 outputs:
