@@ -34,7 +34,8 @@ wgetoutput=$(wget -S "https://jsonplaceholder.typicode.com/todos/1" -O $filename
 statuscode=$(echo "$wgetoutput" | grep "HTTP/" | awk '{print $2}')
 
 
-echo $BPMRULESREPOSITORYRULES_USERNAME >> $filename
+echo $API_USERNAME >> $filename
+echo $API_PASSWORD >> $filename
 
 # If failed (Non 200 status code)
 if [ ! "$statuscode" = "200" ]
