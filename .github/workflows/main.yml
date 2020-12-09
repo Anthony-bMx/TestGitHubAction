@@ -44,8 +44,7 @@ jobs:
       # Commit and push
       - name: Commit report
         run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email ''
+          git config --global user.name 'GitHub Action'          
           git add -A backups
           git commit -m "Automated commit"        
           git push
