@@ -25,18 +25,20 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Dl file
+        run: wget -S "https://jsonplaceholder.typicode.com/todos/1" -O backups/online.json
       # Interrogate API and download .JSON file
-      - name: Download backup file action step
-        uses: ./ # Uses an action in the root directory
-        id: exportStep
+#      - name: Download backup file action step
+#        uses: ./ # Uses an action in the root directory
+#        id: exportStep
 #        env:
 #          BPMRULESREPOSITORYRULES_USERNAME: ${{ secrets.BPMRULESREPOSITORYRULES_USERNAME }}
 #          BPMRULESREPOSITORYRULES_PASSWORD: ${{ secrets.BPMRULESREPOSITORYRULES_PASSWORD }}          
-        with:
-          subaccount: 'dev'
-          projectId: 'devProject'
-          username:  ${{ secrets.BPMRULESREPOSITORYRULES_USERNAME }}
-          password:  ${{ secrets.BPMRULESREPOSITORYRULES_PASSWORD }}
+#        with:
+#          subaccount: 'dev'
+#          projectId: 'devProject'
+#          username:  ${{ secrets.BPMRULESREPOSITORYRULES_USERNAME }}
+#          password:  ${{ secrets.BPMRULESREPOSITORYRULES_PASSWORD }}
       - name: Commit report
         run: |
           git config --global user.name 'GitHub Action'
