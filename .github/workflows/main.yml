@@ -24,8 +24,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
-      - name: Dl file
+      
+      # Interrogate API and download .JSON file
+      - name: Download backup file action step
         run: |
           # Prepare destination directory
           mkdir -p backups
@@ -37,7 +38,7 @@ jobs:
           filename="Notify-Backup-${date}.json"
           
           # Interogate API to get configuration file
-          wget -S "https://jsonplaceho2lder.typicode.com/todos/1" -O backups/$filename
+          wget -S "https://jsonplaceholder.typicode.com/todos/1" -O backups/$filename
       # Interrogate API and download .JSON file
 #      - name: Download backup file action step
 #        uses: ./ # Uses an action in the root directory
